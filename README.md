@@ -1,1 +1,1 @@
-# Analysis_Project_1
+# Wheat Seeds Classification
