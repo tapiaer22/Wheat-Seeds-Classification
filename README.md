@@ -16,21 +16,26 @@ If you would like to see the code and detailed explanations in the process, chec
 ### Assumption of Normality in Distributions
 After testing each distribution and deciding that the  D’Agostino and Pearson’s (dap) test was appropriate for this task, I classified the distributions as either "normal" or "not normal". Consequently, for the sake of this project, I only included "normal" distributions in the analysis:
 
-(Image for normality table here)
+<p align="center"><img src="/Images/Normality_Table.png" style="width:40%;height:40%;"><br>Normality Table</p>
 
 ### The Groups with the Most Differences
 The groups that had generally the major statistically significant differences were `area`, `perimeter`, `length`, and `width`. This is clearly evident in the hypothesized distributions. A statistically significant difference implies that it would be easier to distinguish the class of a sample (and this is proved with the results from the K-means method later on). 
 
-(Hypothesized distributions of variables with differences)
+<p align="center"><img src="/Images/Difference1.png" style="width:50%;height:50%;"><br>Area Differences</p><br>
+<p align="center"><img src="/Images/Difference2.png" style="width:50%;height:50%;"><br>Perimeter Differences</p><br>
+<p align="center"><img src="/Images/Difference3.png" style="width:50%;height:50%;"><br>Length Differences</p><br>
+<p align="center"><img src="/Images/Difference4.png" style="width:50%;height:50%;"><br>Width Differences</p><br>
 
 With `compactness` and `groove`, on the other hand, it is very hard to generally identify differences. The tests resulted in the failure to reject the null hypothesis, implying that there is no difference between the 2 tested groups. If you were to randomly measure the `compactness` of a sample, you won't be able to tell if the sample is from type 1 or type 2. The same happens on `groove` with type 1 and type 3.
 
-(Hypothesized distributions of variables with no significant differences)
+<p align="center"><img src="/Images/NoDifference1.png" style="width:50%;height:50%;"><br>Compactness Similar Distribution</p><br>
+<p align="center"><img src="/Images/NoDifference2.png" style="width:50%;height:50%;"><br>Groove Similar Distribution</p><br>
 
 ### The Best Variable Predictors and Synergy of Variables
 To support the claims of the hypotheses and find the best classification model with the K-means method, I used all combinations of variables to test and verify which combinations had the best accuracy. The `area` and `perimeter` happened to be in the accurate models, while `groove` and `compactness` were the worse in prediction. 
 
-(Table with Top 5 and Worse 5)
+<p align="center"><img src="/Images/Top5.png" style="width:50%;height:50%;"><br>Top 5 and Worse 5</p><br>
+<p align="center"><img src="/Images/results.png" style="width:50%;height:50%;"><br>Top 5 and Worse 5</p><br>
 
 The synergy of variables towards the model can be explained with the results obtained in hypothesis testing. But what is synergy of variables? The synergy of variables is how well the variables perform as a group. A good synergy is able to classify properly even in complex scenarios of data.
 
