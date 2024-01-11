@@ -32,29 +32,34 @@ With `compactness` and `groove`, on the other hand, it is very hard to generally
 <p align="center"><img src="/Images/NoDifference2.png" style="width:50%;height:50%;"><br>Groove Similar Distribution</p><br>
 
 ### The Best Variable Predictors and Synergy of Variables
-To support the claims of the hypotheses and find the best classification model with the K-means method, I used all combinations of variables to test and verify which combinations had the best accuracy. The `area` and `perimeter` happened to be in the accurate models, while `groove` and `compactness` were the worse in prediction. 
+To support the claims of the hypotheses and find the best classification model with the K-means method, I used all combinations of variables to test and verify which combinations had the best accuracy. The `area` and `perimeter` happened to be in the accurate models, while `groove` and `compactness` were the worse in classification. 
 
 <p align="center"><img src="/Images/Top5.png" style="width:50%;height:50%;"><br>Top 5 and Worse 5</p><br>
-<p align="center"><img src="/Images/results.png" style="width:50%;height:50%;"><br>Top 5 and Worse 5</p><br>
 
 The synergy of variables towards the model can be explained with the results obtained in hypothesis testing. But what is synergy of variables? The synergy of variables is how well the variables perform as a group. A good synergy is able to classify properly even in complex scenarios of data.
 
-Bad synergy in classification:
-(Example of Bad Synergy)
+Bad synergy in classification (Notice how predicted clusters are not similar with original data):
 
-Good synergy in classification:
-(Example of Good Synergy)
+<p align="center"><img src="/Images/BadSynergy.png" style="width:50%;height:50%;"><br>Bad Synergy Example</p><br>
+<p align="center"><img src="/Images/BadSynergy(Edited).png" style="width:50%;height:50%;"><br>Bad Synergy Example (With Labeled Clusters)</p><br>
+
+Good synergy in classification (Notice how predicted clusters are very similar with original data):
+
+<p align="center"><img src="/Images/GoodSynergy.png" style="width:50%;height:50%;"><br>Good Synergy Example</p><br>
+<p align="center"><img src="/Images/GoodSynergy(Edited).png" style="width:50%;height:50%;"><br>Good Synergy Example (With Labeled Clusters)</p><br>
 
 The accuracy of the model can be explained with how much synergy exists in the combination of variables for the model. The following synergy cases were identified in the project: 
 
 - Some combinations of variables were great because they complemented each other with their strengths and weaknesses.
 
-  Assume there are two different variables: x1 and x2. Even though variable x1 has no significant difference between class 1 and  class 2, there is another variable x2 with significant difference between those classes, which may help determine the difference that x1 was not able to discern. Take `groove` as an example: it fails to tell a difference between class 1 and class 3, but `width` is fairly good at classifying class 1 and class 3. Putting both together result in better chances of classifying classes correctly, and they turn each of their weaknesses into a strength. This is evident in the table of accuracy.
+  Assume there are two different variables: x1 and x2. Even though variable x1 has no significant difference between class 1 and  class 2, there is another variable x2 with a significant difference between those classes, which may help determine the difference that x1 was not able to discern. Take `groove` as an example: it fails to tell a difference between class 1 and class 3, but `width` is fairly good at classifying class 1 and class 3. Putting both together result in better chances of classifying classes correctly, and they turn each of their weaknesses into a strength. This is evident in the table of accuracy.
 
-(Rank and pvalues of groove, rank and pvalues of width, rank of combined)
+<p align="center"><img src="/Images/Pvalues1.png" style="width:50%;height:50%;"><br>Pvalues of Groove and Width</p><br>
+<p align="center"><img src="/Images/Rank1.png" style="width:50%;height:50%;"><br>Accuracy of Groove, Width, and Combined</p><br>
 
 - A good predictor variable in a combination 'carries the group', meaning the accuracy score is only good because of one variable while there is no synergy at all.
 
   Take `area` and `groove` as an example: area is highly efficient in determining the difference with an accuracy score of (0.84) while groove is weak with a score of (0.65). Now, if you combine both of them, you will get a score of (0.84), which does not improve with respect to the score of the `area`. Even though the score of groove was low, since area was good at determining a difference it will help groove appear in the top of the list even though it did not improve accuracy at all; it was the area the variable responsible for such a high score.
 
-(Rank and pvalues of area, rank and pvalues of groove, rank of combined)
+<p align="center"><img src="/Images/Pvalues2.png" style="width:50%;height:50%;"><br>Pvalues of Area and Groove</p><br>
+<p align="center"><img src="/Images/Rank2.png" style="width:50%;height:50%;"><br>Accuracy of Area, Groove, and Combined</p><br>
